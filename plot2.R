@@ -11,8 +11,8 @@ data$Date <- as.Date(data$Date, "%d/%m/%Y")
 #subsetting 
 data <- data[data$Date %in% as.Date(c("2007-02-01", "2007-02-02")), ]
 
-#plot to PNG image file
+#plot and send to PNG image file
 Sys.setlocale(category = "LC_ALL", locale = "English")
 with(data, plot(Time, Global_active_power, type = "l" , xlab = "", ylab = "Global Active Power (kilowatts)"))
-dev.copy(png, file = "plot2.png") ## Copy my plot to a PNG file
+dev.copy(png, file = "plot2.png", width = 480, height = 480, units = "px")
 dev.off() 

@@ -11,8 +11,8 @@ data$Date <- as.Date(data$Date, "%d/%m/%Y")
 #subsetting 
 data <- data[data$Date %in% as.Date(c("2007-02-01", "2007-02-02")), ]
 
-#plot to PNG image file
+#plot and send to PNG image file
 hist(data$Global_active_power, col = "red", main = "Global Active Power", 
      xlab = "Global Active Power (kilowatts)")
-dev.copy(png, file = "plot1.png") ## Copy my plot to a PNG file
+dev.copy(png, file = "plot1.png", width = 480, height = 480, units = "px") 
 dev.off() 
